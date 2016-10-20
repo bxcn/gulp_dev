@@ -12,9 +12,13 @@
     "url": "https://github.com/bxcn/gulp_dev.git",
     "email": "bxcn@hostname.com"
   },
+  "repository" : { 
+    "type" : "git",
+    "url" : "http://github.com/bxcn/gulp_dev.git"
+  },
   "private": true,//如果你设置"private": true，npm就不会发布它
-  "engines": {//你可以指定工作的node的版本：
-    "node": ">=0.12.0",
+  "engines": {
+    "node": ">=0.12.0",//你可以指定工作的node的版本
     "npm" : "~1.0.20" //指定哪一个npm版本能更好地初始化你的程序
   },
   "devDependencies": {
@@ -42,9 +46,34 @@
     */
     "gulp-sourcemaps": "^1.5.0",
     
+
+    /* 在文件的头部和尾部增加注释信息
+    var pkg = require('./package.json')
+    gulp.task('header', () => {
+      var banner = ['/**',
+      ' * <%= pkg.name %> - <%= pkg.description %>',
+      ' * @version v<%= pkg.version %>',
+      ' * @link <%= pkg.homepage %>',
+      ' * @license <%= pkg.license %>',
+      ' *\/',
+      ''].join('\n')
+
+      return gulp.src('app/js/**\/*.js')
+      .pipe($.header(banner, {pkg: pkg}))
+      .pipe($.footer(banner, {pkg: pkg}))
+      .pipe(gulp.dest('dist/js'))
+      ;
+    });
+    */
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.8.8",
+     // 解析模板文件的插件 像php、java 的include引入
+    "gulp-ejs": "^2.2.1",
+    // 删除文件
     "del": "^1.1.1",
-    //
+    // 自动填补css3属性的前缀
     "gulp-autoprefixer": "^3.0.1",
+
     // 检查css
     "gulp-csslint": "^1.0.0",
     // 压缩并把重复的一部分代码合并
