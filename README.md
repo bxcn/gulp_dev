@@ -5,7 +5,7 @@ gulp配置参数及文件说明
 * .babelrc ES转码工具 ES6转成ES5
 * .bowerrc bower安装目录
 * _config.yml 生成github pages访问页面的配置
-* 
+
 * sass最终输出的样式包括下面几种样式风格：
 * 嵌套输出方式 nested
 * 展开输出方式 expanded 

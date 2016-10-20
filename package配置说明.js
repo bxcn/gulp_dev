@@ -1,15 +1,15 @@
 {
-  "name": "gulp_kuaihuojian", //项目名称
+  "name": "gulp_dev", //项目名称
   "version": "v1.0.0", ////项目版本（必须)
   "description": "this is for khj gulp project", //项目描述 
-  "homepage": "http://www.kuaihuojian.com", //项目主页
+  "homepage": "", //项目主页
   "author": { //项目作者信息
     "name": "bxcn",
-    "email": "dengyanlu@qiaodata.com"
+    "email": "html5think@gmail.com"
   },
-  "keywords": "gulp khj", // 方便别人在npm search中搜索到它
+  "keywords": "gulp dev", // 方便别人在npm search中搜索到它
   "bugs": {//你项目的提交问题的url和（或）邮件地址。这对遇到问题的屌丝很有帮助
-    "url": "http://github.com/bxcn/project/issues",
+    "url": "https://github.com/bxcn/gulp_dev.git",
     "email": "bxcn@hostname.com"
   },
   "private": true,//如果你设置"private": true，npm就不会发布它
