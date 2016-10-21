@@ -127,8 +127,7 @@
     // 格式化文件版本号 
     "gulp-rev-format": "^1.0.4",
     // 把项目文件里的文件名替换成版本号清单里的文件名
-    "gulp-rev-collector": "^1.0.5",
-
+    "gulp-rev-replace": "^0.4.3",
 
     "wiredep": "^2.2.2"
   },
