@@ -1,0 +1,1 @@
+/**  * kuaihuojian project - kuaihuojian project  */ "use strict";var URL="http://"+window.location.hostname+":"+window.location.port+"/",AJAX_TYPE="GET",loadingAjaxData=new DialogLoading;$(function(){$(".accountMangment").size()>0&&$(".subAccount").hover(function(){$(".accountMangment").show()},function(){$(".accountMangment").hide()})});

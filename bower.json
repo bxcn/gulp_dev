@@ -1,12 +1,12 @@
 {
   "name": "gulp",
   "private": true,
-  "dependencies": {},
-  "overrides": {},
-  "devDependencies": {
+  "dependencies": {
     "jquery": "1.11.3",
     "requirejs": "^2.3.2",
-    "Swipe": "swipe#^2.0.0",
     "handlebars.js": "^4.0.5"
+  },
+  "overrides": {},
+  "devDependencies": {
   }
 }
