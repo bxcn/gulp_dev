@@ -31,7 +31,6 @@ gulp.task('html-useref', ['html:build'] ,() => {
 
 gulp.task('html:dev',() => {
   const paths = [
-   { src:'app/html/include/**/*.*', dest: '../Application/Home/View/include/' },
    { src:'app/html/include/**/*.*', dest: 'dist/' }
   ];
 

@@ -126,6 +126,8 @@
     // 把项目文件里的文件名替换成版本号清单里的文件名
     "gulp-rev-replace": "^0.4.3",
 
+    // 用它检查JavaScript代码风格
+    "gulp-jscs": "^4.0.0",
     "wiredep": "^2.2.2"
   },
   // ES 定义编码规范 也可以新那一个文件.eslintrc

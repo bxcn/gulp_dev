@@ -5,11 +5,11 @@ import path from "path";
      // 测试地址
      test_app_dir: "app/Public/",
      // 开发App地址
-     dev_app_dir: "../Application/Home",
+     dev_app_dir: "app/html/",
      // 测试地址
      test_dist_dir: "dist/Public/",
      // 开发Dist地址
-     dev_dist_dir: "../Public/",
+     dev_dist_dir: "dist/html/Public/",
      gulpLoadPlugins: require('gulp-load-plugins'),
      ifSass: (file) => {
        // 判断文件后缀是.scss

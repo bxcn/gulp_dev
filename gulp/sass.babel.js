@@ -109,6 +109,5 @@ gulp.task('sass:dev', () => {
       browsers: ['> 5%', 'last 4 versions']
     }))
     .pipe(gulp.dest(test_dist_dir + 'css/'))
-    .pipe(gulp.dest(dist_dir + 'css/'))
     ;
 });

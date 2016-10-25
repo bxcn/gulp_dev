@@ -61,7 +61,7 @@ gulp.task('js', () => {
     //.pipe($.sourcemaps.init())
     //.pipe($.if(config.ifLibDir, $.eslint(), $.babel()))
     .pipe($.babel())
-     .pipe($.header(banner, {pkg: pkg}))
+    .pipe($.header(banner, {pkg: pkg}))
     .pipe($.uglify({
       preserveComments:'all'
     }))
@@ -73,11 +73,15 @@ gulp.task('js', () => {
 
 gulp.task('js:dev', () => {
   // 不匹配lib文件夹下所有文件
-  return gulp.src(['app/Public/js/**/*.js'])
+  return gulp.src(['app/Public/js/404.js'])
     .pipe($.cached("js"))
     .pipe($.plumber())
     //.pipe($.babel())
+    //{fix:true}让它尝试自动修复你的文件
+    // http://jscs.info/overview#-reporter-r
+    .pipe($.jscs({fix:true}))
+    .pipe($.jscs.reporter())
     .pipe(gulp.dest(test_dist_dir + 'js/'))
-    .pipe(gulp.dest(dist_dir + 'js/'))
+    //.pipe(gulp.dest(dist_dir + 'js/'))
     ;
 });

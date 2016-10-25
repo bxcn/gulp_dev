@@ -38,7 +38,6 @@ gulp.task('images', () => {
 
 gulp.task('images:dev', function () {
     var paths = [
-        {src: 'app/Public/image/**/*.*', dest: dist_dir + 'image/'},
         {src: 'app/Public/image/**/*.*', dest: test_dist_dir + 'images/'}
     ];
     return $.copy2(paths);

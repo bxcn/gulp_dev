@@ -1,1 +1,0 @@
-/**  * kuaihuojian project - kuaihuojian project  */ "use strict";$(function(){$("#smsStatus").selectUI({width:200,height:32,addClass:"fl ml5"}),$(".records").height($(document).height()-184),$(window).resize(function(){$(".records").height($(document).height()-184)})});
