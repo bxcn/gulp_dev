@@ -12,4 +12,5 @@ gulp.task('watch:dev',['sass:dev','js:dev','images:dev','html:dev'], () => {
   gulp.watch('app/Public/css/**/*.scss', ['sass:dev']);
   gulp.watch('app/Public/image/**/*', ['images:dev']);
   gulp.watch('app/html/**/*', ['html:dev']);
+  gulp.watch(['.eslintrc','gulp/**/*.js','gulpfile.babel.js'], ['watch:dev']);
 });

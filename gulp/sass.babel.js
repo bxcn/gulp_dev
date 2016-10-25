@@ -58,6 +58,7 @@ gulp.task('sass', () => {
     .pipe($.sass())
     .pipe($.replace(/(\.(jpg|png|gif)+)/g,"$1?v="+timer)) 
     .pipe($.csslint())
+    .pipe($.csslint.formatter())
     // 压缩成一行
     //.pipe($.cssnano())
     /*

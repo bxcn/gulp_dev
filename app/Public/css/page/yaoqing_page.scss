@@ -176,7 +176,7 @@ header img {
   padding:0 5px;
   border:none;
   color:#fff;
-  font-size:12px;
+  font-size:12px;;
   box-sizing:border-box;
   background-color:#38f;
   border-radius:3px;
@@ -184,4 +184,6 @@ header img {
   &:first-child {
     margin-left:0;
   }
+  display:inline-block;
+  float:left;
 }

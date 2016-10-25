@@ -74,13 +74,17 @@ gulp.task('js', () => {
 gulp.task('js:dev', () => {
   // 不匹配lib文件夹下所有文件
   return gulp.src(['app/Public/js/404.js'])
-    .pipe($.cached("js"))
+    //.pipe($.cached("js"))
     .pipe($.plumber())
+    .pipe($.eslint())
+    // 输出到控制台
+    .pipe($.eslint.format())
+    //.pipe($.eslint.failAfterError())
     //.pipe($.babel())
     //{fix:true}让它尝试自动修复你的文件
     // http://jscs.info/overview#-reporter-r
-    .pipe($.jscs({fix:true}))
-    .pipe($.jscs.reporter())
+    //.pipe($.jscs({fix:true}))
+    //.pipe($.jscs.reporter())
     .pipe(gulp.dest(test_dist_dir + 'js/'))
     //.pipe(gulp.dest(dist_dir + 'js/'))
     ;

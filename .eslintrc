@@ -1,16 +1,21 @@
 {
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "node": true,
-      "browser": true
-    },
-    "rules": {
-      "quotes": [
-        2,
-        "single"
-      ]
-    }
+  "env": {
+    "browser": true,
+  },
+  "globals": {
+    "jquery": true,
+  },
+  // rules参数列表：http://eslint.org/docs/rules/
+  "rules": {
+    "max-len":["error",120], // 一行最大的字符数
+    "max-lines":["error",1000], // 一个文件最大行数
+    "newline-after-var":2, // var声明在一个新行后面
+    "indent":["error", 2], // 缩进二个tab
+    "camelcase": 2,
+    "curly": 2, // 大括号
+    "brace-style": [2, "1tbs"],
+    "quotes": [2, "double"],
+    "semi": [2, "always"],
+    "space-infix-ops": 2,
   }
 }
-
