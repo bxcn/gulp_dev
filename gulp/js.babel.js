@@ -73,7 +73,7 @@ gulp.task('js', () => {
 
 gulp.task('js:dev', () => {
   // 不匹配lib文件夹下所有文件
-  return gulp.src(['app/Public/js/404.js'])
+  return gulp.src(['app/Public/js/**/*.js'])
     //.pipe($.cached("js"))
     .pipe($.plumber())
     .pipe($.eslint())

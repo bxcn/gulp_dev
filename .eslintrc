@@ -12,6 +12,7 @@
     "newline-after-var":2, // var声明在一个新行后面
     "indent":["error", 2], // 缩进二个tab
     "camelcase": 2,
+    "init-declarations": 2,//变量声明时必须赋初值
     "curly": 2, // 大括号
     "brace-style": [2, "1tbs"],
     "quotes": [2, "double"],
