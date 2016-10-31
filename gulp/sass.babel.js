@@ -27,21 +27,12 @@ const banner = ['/**',
 ' *\/',
 ''].join(' ');
 
-gulp.task('base-sass', () => {
+gulp.task('to-less:dev', () => {
   const timer = +(new Date());
-  return gulp.src(['app/Public/css/lib/base.scss'])
-    .pipe($.cached("base-sass"))
-    //语法报错时，整个运行流程还会继续走下去，不退出
-    .pipe($.plumber())
+  return gulp.src(['app/Public/css/lib/less.scss'])
     .pipe($.sass())
-    .pipe($.replace(/(\.(jpg|png|gif)+)/g,"$1?v="+timer)) 
-    .pipe($.csslint())
-    .pipe($.autoprefixer({
-      browsers: ['> 5%', 'last 4 versions']
-    }))
-    // 压缩重复 
-    .pipe($.cleanCss())
-    .pipe(gulp.dest(dist_dir + 'css/lib/'))
+    .pipe($.rename("base.less"))
+    .pipe(gulp.dest('app/Public/less/mixins'))
     ;
 });
 

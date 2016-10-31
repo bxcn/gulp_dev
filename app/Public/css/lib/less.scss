@@ -1,0 +1,36 @@
+@for $i from 6 through 20 {
+    .f#{$i * 2} {font-size:#{$i * 2}px;}
+}
+
+
+
+@function px($px) {
+    @return #{$px * 5}
+}
+
+
+$margins: (mt:margin-top, mr:margin-right, mb:margin-bottom, ml:margin-left);
+$paddings: (pt:padding-top, pr:padding-right, pb:padding-bottom, pl:padding-left);
+
+@mixin toPaddingMargin($maps) {
+  @each $name, $value in $maps {
+    @for $i from 1 through 10 {
+        .#{$name}#{$i * 5} {
+            #{$value}:#{$i * 5}px;
+        }
+    }
+  }
+}
+/* 生成margin */
+@include toPaddingMargin($margins);
+/* 生成padding */
+@include toPaddingMargin($paddings);
+
+/*
+sass是一种预编译
+sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，
+这种和我们平时写的css文件格式差不多，使用大括号和分号。而本教程中所说的所有sass文件都指后缀名为scss的文件。
+在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。
+*/
+
+

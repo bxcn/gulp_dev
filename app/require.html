@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>gulp前端自动化工具构建</title>
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+</head>
+
+<body>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/requirejs/require.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <script>
+    require.config({
+        baseUrl: '/Public/js/',
+        paths: {
+　　　　　　"jquery": "jquery"
+　　　　},
+        shim:{
+          "jquery": {
+            exports:"jquery"
+          }
+        }
+    });
+    window.requireConfig = {
+      ajaxData:true
+    }
+  </script>     
+  <script>require(['require/app'], function (app) { app.init(window.requireConfig); });</script>
+</body>
+
+</html>

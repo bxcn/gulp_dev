@@ -3,53 +3,119 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>gulp前端自动化工具构建</title>
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="dist/css/app.css" />
-  <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="dist/Public/less/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
-  <!-- build:css styles/main.css -->
-  <!-- endbuild -->
-  <!-- build:js scripts/vendor/modernizr.js -->
-  <!-- endbuild -->
-  <script src="lib/zepto.min.js"></script>
 </head>
-
-<body>
-
-
 <style>
-    div {width: 500px; height: 500px; background-color: red;}
+@media (min-width: 768px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+.navbar-default {
+  background-color:#333;
+  border-width:0;
+}
+.pl {padding-left:0;}
+.c_header .navbar-nav > li > a,
+.c_header .navbar-nav > li > a:hover,
+.c_header .navbar-nav > .active > a,
+.c_header .navbar-nav > .active > a:hover {
+  color:#fff;
+  background-color:transparent;
+}
+
 </style>
-<div id="div"></div>
+<body>
+<div class="bs-example">
 
-<script>
-    document.getElementById("div").onclick = function () {
-        this.style.backgroundColor = 'green';
-    };
-</script>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" href="#myModal">
+  Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="row c_header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container pl">
+    <div class="navbar-header">
+      <a class="navbar-left" href="#">
+        <img src="http://rocket4.com/Public/image/common/logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="row" href="#">查询目标客户</a></li>
+        <li><a href="#">在线演示V3.0</a></li>
+        <li><a href="#">客户案例</a></li>
+        <li><a href="#">客户案例</a></li>
+      </ul>    
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a class="row" href="#">查询目标客户</a></li>
+        <li><a href="#">在线演示V3.0</a></li>
+        <li><a href="#">客户案例</a></li>
+        <li><a href="#">客户案例</a></li>
+      </ul>
+      <div class="nav navbar-right" style="margin-top:13px;">
+        <button type="button" class="btn btn-primary">dengyalu@qiaodata.com</button>
+        <button type="button" class="btn btn-primary">退出</button>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  
+</div>
 asdf
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="../bower_components/zepto/zepto.js"></script>
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../bower_components/requirejs/require.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:js scripts/main.js -->
-  <!-- endbuild -->
+<div style="height:1000px;">
+    
+  </div>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/requirejs/require.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<script src="/dist/Public/js/lib/sea.js"></script>
+<script src="/dist/Public/js/seajs/sea-debug.js"></script>
+<!-- endbuild -->
+<script>
+// 禁止通过esc键退出模态框
+$.fn.modal.Constructor.DEFAULTS.keyboard = false;
 
-  <script>
-    require(function(){
-      alert();
-    });
-  </script>
-</body>
+seajs.config({
+  base: "/Public/js/",
+  alias: {
+    "jquery": "lib/jquery.sea",
+    "sea-debug": "seajs/sea-debug"
+  }
+});
+// 加载入口模块
+seajs.use("seajs/app.js", function(app) {
+  app.init();
+});
+</script>
 
 </html>

@@ -3,21 +3,20 @@
 /*
 asdfasdfasdf
 */
-class TestAlert {     constructor(x, y) {
+class TestAlert {
+  constructor(x, y) {
     this.x = x;
 
 
 
-    
     this.y = y;
   }
 
   toString() {
-    return "(x="+ this.x +", y="+ this.y +")"
+    return "(x=" + this.x + ", y=" + this.y + ")"
   }
 }
 
-var x = {      a: 1 };
-
-
-
+var x = {
+  a: 1
+};

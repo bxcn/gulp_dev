@@ -30,6 +30,8 @@
     "babel-core": "^6.17.0",
     "babel-preset-es2015": "^6.16.0",
 
+    // 基于NodeJS开发的Web应用框架
+    "express": "^4.14.0",
     //Babel提供babel-cli工具，用于命令行转码,需要安装命令:npm install -g babel-cli
     // 调用 babel app/js/es6.js -o a.js
     "babel-cli": "^6.16.0",

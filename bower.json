@@ -4,9 +4,9 @@
   "dependencies": {
     "jquery": "1.11.3",
     "requirejs": "^2.3.2",
-    "handlebars.js": "^4.0.5"
+    "handlebars.js": "^4.0.5",
+    "bootstrap": "^3.3.7"
   },
   "overrides": {},
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

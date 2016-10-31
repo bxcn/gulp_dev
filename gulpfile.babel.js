@@ -6,6 +6,7 @@ import path from "path";
 import { stream as wiredep } from 'wiredep';
 import childProcess from "child_process";
 import reguireDir from "require-dir";
+const $ =  gulpLoadPlugins();
 reguireDir('./gulp/');
 
 gulp.task('build:dev', () => {
@@ -18,6 +19,14 @@ gulp.task('html',['sass','js','images'], () => {
 
 gulp.task('build',['html'], () => {
   gulp.start('add-version');
+});
+
+// less转换
+gulp.task("less:dev", () => {
+  gulp.src("app/Public/less/bootstrap.less")
+  .pipe($.plumber())
+  .pipe($.less())
+  .pipe(gulp.dest("dist/Public/less"));
 });
 
 // 更新gulp的package的版本号 "version":"0.0.2"
