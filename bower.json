@@ -5,7 +5,8 @@
     "jquery": "1.11.3",
     "requirejs": "^2.3.2",
     "handlebars.js": "^4.0.5",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "vue": "^2.0.3"
   },
   "overrides": {},
   "devDependencies": {}

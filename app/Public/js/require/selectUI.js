@@ -1,4 +1,6 @@
-define( function() {
+define(function() {
   console.log("selectUI");
-  return {init:function(){}};
+  return {
+    init: function() {}
+  };
 });

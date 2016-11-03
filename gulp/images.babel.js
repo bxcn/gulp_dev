@@ -19,7 +19,7 @@ const dist_dir = dev_dist_dir;
 
 // 转换图片
 gulp.task('images', () => {
-  return gulp.src('app/Public/image/**/*')
+  return gulp.src('app/Public/images/**/*')
     .pipe($.cached("image"))
     .pipe($.plumber())
     .pipe($.imagemin({
@@ -38,7 +38,7 @@ gulp.task('images', () => {
 
 gulp.task('images:dev', function () {
     var paths = [
-        {src: 'app/Public/image/**/*.*', dest: test_dist_dir + 'images/'}
+        {src: 'app/Public/images/**/*.*', dest: test_dist_dir + 'images/'}
     ];
     return $.copy2(paths);
 });

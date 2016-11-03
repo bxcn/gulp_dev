@@ -52,7 +52,7 @@ gulp.task('base-js', () => {
 });
 gulp.task('js', () => {
   // 不匹配lib文件夹下所有文件
-  return gulp.src(['app/Public/js/**/*.js', '!app/Public/js/lib/*.js'])
+  return gulp.src(['app/Public/js/!(require|seajs)/**/*.js'])
     // 合并多个文件要放到cached前面
     //.pipe($.if(config.ifLibDir, $.concat("lib/base.js")))
     .pipe($.cached("js"))
@@ -73,7 +73,7 @@ gulp.task('js', () => {
 
 gulp.task('js:dev', () => {
   // 不匹配lib文件夹下所有文件
-  return gulp.src(['app/Public/js/**/*.js'])
+  return gulp.src(['app/Public/js/!(require|seajs)/**/*.js'])
     .pipe($.cached("js"))
     .pipe($.plumber())
     //.pipe($.eslint())

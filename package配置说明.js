@@ -23,6 +23,19 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+      // ejs模板
+    "ejs": "^2.5.2",
+    // jade模板
+    "jade": "^1.11.0",
+    // mysql驱动
+    "mysql": "^2.11.1",
+    // StylusCSS预处理工具
+    "gulp-stylus": "^2.6.0",
+    // seajs打包工具
+    "gulp-seajs": "^0.4.2",
+    // requireJS打包优化工具
+    "gulp-requirejs-optimize": "^1.2.0",
+
     "gulp-load-plugins": "^0.10.0",
     // 把ES6转换成ES5这个转换的是把自定义a.js文件的ES6代码转换成Es5代码，下面还有一个是运行运行Task时把gulpfile.babel.js转换成ES5
     "gulp-babel": "^6.1.1",

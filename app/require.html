@@ -15,12 +15,11 @@
   <!-- bower:js -->
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/requirejs/require.js"></script>
-  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <script>
     require.config({
-        baseUrl: '/Public/js/',
+        baseUrl: '../dist/Public/js/require',
         paths: {
 　　　　　　"jquery": "jquery"
 　　　　},
@@ -34,7 +33,7 @@
       ajaxData:true
     }
   </script>     
-  <script>require(['require/app'], function (app) { app.init(window.requireConfig); });</script>
+  <script>require(['app'], function (app) { console.log(app);app.init(window.requireConfig); });</script>
 </body>
 
 </html>

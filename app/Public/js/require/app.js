@@ -1,11 +1,12 @@
-define(function(require, exports, module) {
+define(function(require) {
 
-  
+  exports = {};
+
   exports.init = function(options) {
     options = options || {};
     if (false) {
-      var ajaxData = require("../require/ajaxData");
+      var ajaxData = require("./ajaxData");
     }
   }
-
+  return exports;
 });

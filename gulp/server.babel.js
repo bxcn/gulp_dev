@@ -8,7 +8,7 @@ const reload = browserSync.reload;
  
  
 
-gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'less:dev'], () => {
+gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'less:dev', 'html:dev',"requirejs:dev","seajs:dev"], () => {
   // http://www.browsersync.cn/docs/options/
   browserSync({
     notify:false,//不显示在浏览器中的任何通知。
@@ -26,7 +26,9 @@ gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'less:dev'], () => {
   })
   // 每当修改以下文件夹下的文件时就会刷新浏览器;
   //gulp.watch('app/html/**/*.html', ['html']);
-  gulp.watch('app/Public/js/**/*.js', ['js:dev']);
+  gulp.watch('app/Public/js/!(require|seajs)/**/*.js', ['js:dev']);
+  gulp.watch('app/Public/js/requirejs/**/*.js', ['requirejs:dev']);
+  gulp.watch('app/Public/js/seajs/**/*.js', ['seajs:dev']);
   gulp.watch('app/Public/css/**/*.scss', ['sass:dev']);
   gulp.watch('app/Public/less/**/*.less', ['less:dev']);
   gulp.watch('app/Public/image/**/*', ['images:dev']);
