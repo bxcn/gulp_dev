@@ -1,8 +1,7 @@
 import gulp from 'gulp';
 import config from './config';
 const $ =  config.gulpLoadPlugins();
-// 开发App地址
-const app_dir = config.dev_app_dir;
+const app_dir = "app/Public/"
 
 // 生成版本号清单
 gulp.task('rev', () => {
@@ -42,7 +41,7 @@ gulp.task('add-version',['rev'], function() {
       }
       return filename;
     }
-    gulp.src([app_dir + '/**/**.html']) 
+    gulp.src(['../Application/Home/View/**/**.html']) 
       // 删除原来的版本 
       .pipe($.replace(/(\.[a-z]+)\?v=[^\'\"\&]*/g,"$1")) 
       .pipe($.revReplace({
@@ -50,5 +49,5 @@ gulp.task('add-version',['rev'], function() {
       modifyUnreved: modifyUnreved,
       modifyReved: modifyReved
     }))  
-    .pipe(gulp.dest(app_dir));
+    .pipe(gulp.dest('../Application/Home/View/'));
 });

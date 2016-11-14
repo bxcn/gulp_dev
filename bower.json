@@ -6,7 +6,8 @@
     "requirejs": "^2.3.2",
     "handlebars.js": "^4.0.5",
     "bootstrap": "^3.3.7",
-    "vue": "^2.0.3"
+    "vue": "^2.0.3",
+    "vuex": "^2.0.0"
   },
   "overrides": {},
   "devDependencies": {}

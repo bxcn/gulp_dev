@@ -3,12 +3,16 @@ import browserSync from 'browser-sync';
 import config from './config';
 const $ =  config.gulpLoadPlugins();
 
+gulp.task("My97DatePicker", ()=> {
+  return gulp.src('app/Public/My97DatePicker/**/*.*')
+  .pipe(gulp.dest('dist/Public/My97DatePicker/'))
+  .pipe(gulp.dest('../Public/My97DatePicker/'));
+})
+
 // 重新加载
 const reload = browserSync.reload;
- 
- 
-
-gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'less:dev', 'html:dev',"requirejs:dev","seajs:dev"], () => {
+const app_dir = "app/Public/"
+gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'html:dev', 'json:dev','My97DatePicker'], () => {
   // http://www.browsersync.cn/docs/options/
   browserSync({
     notify:false,//不显示在浏览器中的任何通知。
@@ -16,31 +20,24 @@ gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'less:dev', 'html:dev',"
     host:'10.100.1.157',
     browser:["chrome"/*, "firefox"*/], // 在chrome、firefix下打开该站点
     server: {
-      baseDir:['app/'],// 应用程序目录
+      baseDir:['dist/'],// 应用程序目录
       index:'index.html',// 在应用程序目录中指定打开特定的文件
       routes: {
-        '/bower_components' : 'bower_components',
-        '/dist' : 'dist'
+        '/bower_components' : 'bower_components'
       }
     }
   })
   // 每当修改以下文件夹下的文件时就会刷新浏览器;
-  //gulp.watch('app/html/**/*.html', ['html']);
-  gulp.watch('app/Public/js/!(require|seajs)/**/*.js', ['js:dev']);
-  gulp.watch('app/Public/js/requirejs/**/*.js', ['requirejs:dev']);
-  gulp.watch('app/Public/js/seajs/**/*.js', ['seajs:dev']);
-  gulp.watch('app/Public/css/**/*.scss', ['sass:dev']);
-  gulp.watch('app/Public/less/**/*.less', ['less:dev']);
-  gulp.watch('app/Public/image/**/*', ['images:dev']);
-  gulp.watch('app/**/*', ['html:dev']);
-  //gulp.watch(['.eslintrc','gulp/**/*.js','gulpfile.babel.js'], ['server']);
+  gulp.watch('app/Public/js/**/*.js', ['js:dev']);
+  gulp.watch('app/Public/sass/**/*.scss', ['sass:dev']);
+  gulp.watch('app/Public/images/**/*', ['images:dev']);
+  gulp.watch('app/**/*.html', ['html:dev']);
 
   gulp.watch([
-    'app/Public/**/*.html',
-    'app/Public/images/**/*',
-    'app/Public/css/**/*',
-    'app/Public/less/bootstrap.less',
-    'app/Public/js/**/*',
+    app_dir + '/**/*.html',
+    app_dir + '/images/**/*',
+    app_dir + '/sass/**/*',
+    app_dir + '/js/**/*',
   ]).on('change', reload);
 });
 

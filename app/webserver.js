@@ -10,9 +10,9 @@ var child_process = require('child_process');
 var server = http.createServer(function (request, response) {
 
 
-    child_process.exec('gulp sass');
+    //child_process.exec('gulp sass');
 
-    var workerProcess = child_process.exec('gulp sass',
+/*    var workerProcess = child_process.exec('gulp sass',
       function (error, stdout, stderr) {
          if (error) {
             console.log(error.stack);
@@ -25,7 +25,7 @@ var server = http.createServer(function (request, response) {
 
       workerProcess.on('exit', function (code) {
       console.log('子进程已退出，退出码 '+code);
-   });
+   });*/
 
 
 
@@ -40,7 +40,7 @@ var server = http.createServer(function (request, response) {
                 'Content-Type': 'text/plain'
             });
 
-            response.write("This request URL " + pathname + " was not found on this server.");
+            response.write("This request URL 123 was not found on this server.");
             response.end();
         } else {
             fs.readFile(realPath, "binary", function (err, file) {

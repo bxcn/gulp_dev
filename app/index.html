@@ -4,113 +4,26 @@
 <head>
   <meta charset="utf-8">
   <title>gulp前端自动化工具构建</title>
+  <% include html/include/common.html %>
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
 </head>
-<style>
-@media (min-width: 768px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-.navbar-default {
-  background-color:#333;
-  border-width:0;
-}
-.pl {padding-left:0;}
-.c_header .navbar-nav > li > a,
-.c_header .navbar-nav > li > a:hover,
-.c_header .navbar-nav > .active > a,
-.c_header .navbar-nav > .active > a:hover {
-  color:#fff;
-  background-color:transparent;
-}
 
-</style>
 <body>
-<div class="bs-example">
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" href="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<nav class="row c_header navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container pl">
-    <div class="navbar-header">
-      <a class="navbar-left" href="#">
-        <img src="http://rocket4.com/Public/image/common/logo.png" alt="">
-      </a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a class="row" href="#">查询目标客户</a></li>
-        <li><a href="#">在线演示V3.0</a></li>
-        <li><a href="#">客户案例</a></li>
-        <li><a href="#">客户案例</a></li>
-      </ul>    
-      <ul class="nav navbar-nav navbar-left">
-        <li class="active"><a class="row" href="#">查询目标客户</a></li>
-        <li><a href="#">在线演示V3.0</a></li>
-        <li><a href="#">客户案例</a></li>
-        <li><a href="#">客户案例</a></li>
-      </ul>
-      <div class="nav navbar-right" style="margin-top:13px;">
-        <button type="button" class="btn btn-primary">dengyalu@qiaodata.com</button>
-        <button type="button" class="btn btn-primary">退出</button>
-      </div>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  
-</div>
-asdf
-<div style="height:1000px;">
-    
-  </div>
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/requirejs/require.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <script src="../bower_components/vue/dist/vue.js"></script>
-<script src="/dist/Public/js/lib/sea.js"></script>
-<script src="/dist/Public/js/seajs/sea-debug.js"></script>
+<script src="Public/js/lib/sea.js"></script>
 <!-- endbuild -->
 <script>
 // 禁止通过esc键退出模态框
-$.fn.modal.Constructor.DEFAULTS.keyboard = false;
-
 seajs.config({
-  base: "/Public/js/",
-  alias: {
-    "jquery": "lib/jquery.sea",
-    "sea-debug": "seajs/sea-debug"
-  }
+  base: "/Public/js/"
 });
 // 加载入口模块
 seajs.use("seajs/app.js", function(app) {

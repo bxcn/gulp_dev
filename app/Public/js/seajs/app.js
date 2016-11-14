@@ -1,8 +1,10 @@
-define("seaMain", [], function(require, exports, module) {
+define(function(require, exports, module) {
 
-  var ajaxData = require("./ajaxData");
   exports.init = function(options) {
- 
+      
+      const es6 = require('../es6');
+      console.log(es6);
+
   }
 
 });

@@ -9,11 +9,7 @@
     factory(jQuery);
   }
 }(function($) {
-
-  
-
   window["ajaxData"] = new AjaxData();
-
 }));
 
 
