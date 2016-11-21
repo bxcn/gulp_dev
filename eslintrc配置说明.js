@@ -1,3 +1,23 @@
+/**
+ ESlint 提示有三个level：
+  "off" or 0 - 关闭这个规则校验
+  "warn" or 1 - 开启这个规则校验，但只是提醒，不会退出
+  "error" or 2 - 开启这个规则校验，并退出
+
+
+
+临时关闭eslint校验：
+
+eslint-disable 
+
+
+ */
+//表示使用默认的规则进行校验
+"extends": "eslint:recommended",
+// 文件中指定规则不验证
+/*eslint-disable no-alert, no-console */
+ 
+//  // rules参数列表：http://eslint.org/docs/rules/
 "ecmaFeatures": {
   // lambda表达式  
   "arrowFunctions": true,
@@ -410,7 +430,7 @@
   "padded-blocks": 0,
   //对象的属性名是否强制加双引号
   "quote-props": [2, "always"],
-  //在JavaScript中有三种方式定义字符串，双引号、单引号、反义符（ECMAScript2015）。规定了字符串定义的方式
+  //在JavaScript中有三种方式定义字符串，双引号(double)、单引号(single)、反义符（ECMAScript2015）。规定了字符串定义的方式
   "quotes": [2, "single", "avoid-escape"],
   //注释格式要求JSDoc格式
   "require-jsdoc": [2, {

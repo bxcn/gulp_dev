@@ -12,7 +12,7 @@ gulp.task("My97DatePicker", ()=> {
 // 重新加载
 const reload = browserSync.reload;
 const app_dir = "app/Public/"
-gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'html:dev', 'json:dev','My97DatePicker'], () => {
+gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'html:dev', 'json:dev','seajs:dev', 'My97DatePicker'], () => {
   // http://www.browsersync.cn/docs/options/
   browserSync({
     notify:false,//不显示在浏览器中的任何通知。
@@ -21,7 +21,7 @@ gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'html:dev', 'json:dev','
     browser:["chrome"/*, "firefox"*/], // 在chrome、firefix下打开该站点
     server: {
       baseDir:['dist/'],// 应用程序目录
-      index:'index.html',// 在应用程序目录中指定打开特定的文件
+      index:'html/index.html',// 在应用程序目录中指定打开特定的文件
       routes: {
         '/bower_components' : 'bower_components'
       }
@@ -34,10 +34,7 @@ gulp.task('serve', ['sass:dev', 'js:dev', 'images:dev', 'html:dev', 'json:dev','
   gulp.watch('app/**/*.html', ['html:dev']);
 
   gulp.watch([
-    app_dir + '/**/*.html',
-    app_dir + '/images/**/*',
-    app_dir + '/sass/**/*',
-    app_dir + '/js/**/*',
+    'app/**/*.*'
   ]).on('change', reload);
 });
 

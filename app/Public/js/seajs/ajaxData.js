@@ -4,5 +4,5 @@ define(function(require, exports, module) {
     if (true) {
       require("./selectUI").init();
     }
-  }
+  };
 });

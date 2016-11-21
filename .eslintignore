@@ -1,0 +1,3 @@
+node_modules
+*.min.js
+test/data/jquery-1.9.1.js

@@ -1,23 +1,62 @@
-/**
- * Mocking client-server processing
- */
-const _products = [
-  {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2},
-  {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10},
-  {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
-]
+define(function(require, exports, module) {
+  
+  module.exports.init = function() {
+    
+    var ajaxData = require('../lib/ajaxData').init();
 
-export default {
-  getProducts (cb) {
-    setTimeout(() => cb(_products), 100)
-  },
+    $('[data-delete]').click(function(){
 
-  buyProducts (products, cb, errorCb) {
-    setTimeout(() => {
-      // simulate random checkout failure.
-      (Math.random() > 0.5 || navigator.userAgent.indexOf('PhantomJS') > -1)
-        ? cb()
-        : errorCb()
-    }, 100)
-  }
-}
+      var checkeds = $('[data-checkbox-many=\'item\']:checked');
+      var array = [];
+
+      checkeds.each(function(){
+        array.push($(this).val());
+      });
+      if ( !array.length ) {
+        
+        alertDialog('请先选择要去除的项');
+        return;
+      }
+
+      promptDialog('是否确认去除合格简历', {
+        ok:function() {
+
+          ajaxData.post({
+            url:'/ResumeList/del_resume',
+            data:{'id':array.join(',')}
+          })
+          .done((result)=>{
+            if (result.status) {
+              location.reload();
+            } else {
+              alertDialog(result.msg);
+            }
+          });
+        }
+
+      });
+
+    });  
+
+    console.log("Log a debug level message.");
+
+    var obj = {
+      id: 1
+    };
+    /**
+     * [description]
+     *
+     * @return {[type]} [description]
+     */
+    const fn = () => {
+      return true;
+    };
+    // 切换select
+    $('select[data-select]').on('change.bs.other', function(){
+      var that = $(this);
+      console.log(1);
+    });
+
+    $('.JobInvitation').addClass('active');
+  };
+});

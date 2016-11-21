@@ -5,10 +5,9 @@ var url=require('url');
 var fs=require('fs');
 var mine=require('./mine').types;
 var path=require('path');
-var child_process = require('child_process');
+var childProcess = require('child_process');
 
 var server = http.createServer(function (request, response) {
-
 
     //child_process.exec('gulp sass');
 
@@ -26,8 +25,6 @@ var server = http.createServer(function (request, response) {
       workerProcess.on('exit', function (code) {
       console.log('子进程已退出，退出码 '+code);
    });*/
-
-
 
     var pathname = url.parse(request.url).pathname;
     var realPath = path.join("assets", pathname);

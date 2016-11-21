@@ -66,5 +66,7 @@
   "scripts": {
     "build": "babel app -d lib"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^3.10.2"
+  }
 }

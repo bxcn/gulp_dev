@@ -1,31 +1,30 @@
 {
+  "extends": "eslint:recommended",
   "env": {
     "browser": true,
+    "es6": true,
+    "node": true,
+    "commonjs": true,
+    "require":true
   },
   "globals": {
-    "jquery": true,
+
   },
+  "parserOptions": {
+  },
+
+  "ecmaFeatures": {
+   
+  } ,
   // rules参数列表：http://eslint.org/docs/rules/
   "rules": {
-    "max-len":["error",120], 
     "max-lines":["error",1000],  
-    "newline-after-var":2,  
-    "indent":["error", 2], 
     "camelcase": 2,
-    "init-declarations": 2, 
     "curly": 2, // 大括号
     "brace-style": [2, "1tbs"],
-    "quotes": [2, "double"],
-    "semi": [2, "always"],
-    "space-infix-ops": 2,
-    "require-jsdoc": [2, {
-      "require": {
-        "FunctionDeclaration": true,
-        "MethodDefinition": false,
-        "ClassDeclaration": false
-      }
-    }],
-    "spaced-comment": [2, "always", { "markers": ["global", "globals", "eslint", "eslint-disable", "*package", "!", ","] }],
-    "no-const-assign": 2,
+    "quotes": [2, "single"],
+    "no-undef": 2,
+    "no-unexpected-multiline": 2,
+    "no-unused-vars": 2
   }
 }

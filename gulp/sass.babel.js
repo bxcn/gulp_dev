@@ -30,9 +30,9 @@ gulp.task('sass', () => {
     // 压缩重复 
     .pipe($.cleanCss({debug: false}, function(details) {
       //压缩前大小
-      console.log(details.name + ' originalSize: ' + details.stats.originalSize);
+      //console.log(details.name + ' originalSize: ' + details.stats.originalSize);
       //压缩后大小
-      console.log(details.name + ' minifiedSize: ' + details.stats.minifiedSize);
+      //console.log(details.name + ' minifiedSize: ' + details.stats.minifiedSize);
     }))
     .pipe(gulp.dest('../Public/css/'))
     .pipe(gulp.dest('dist/Public/css/'))
