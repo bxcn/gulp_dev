@@ -51,7 +51,7 @@ gulp.task('js:dev', () => {
     //.pipe($.cached("js:dev"))
     .pipe($.plumber())
     .pipe($.if(notHasLib,$.babel({
-       presets: ['es2015']
+       presets: ['react','es2015']
     })))
     .pipe(gulp.dest('dist/Public/js/'))
     .pipe(gulp.dest('../Public/js/'))

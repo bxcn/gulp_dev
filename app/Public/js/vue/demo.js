@@ -6,17 +6,20 @@ const Company = {
   template: '<div class="blue">Company {{$route.params.id}}</div>'
 }
 
-const routes = [
-  {component: Home, path: "/Home/:id"},
-  {component: Company, path: "/Company/:id"}
-];
+const routes = [{
+  component: Home,
+  path: "/Home/:id"
+}, {
+  component: Company,
+  path: "/Company/:id"
+}];
 
 const router = new VueRouter({
   routes // （缩写）相当于 routes: routes
 });
 
 const app = new Vue({
-  data () {
+  data() {
     return {
       count: 0
     }
@@ -37,12 +40,12 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    increment ( state ) {
+    increment(state) {
       state.count++;
     }
   },
   actions: {
-    increment ( state ) {
+    increment(state) {
       state.commit('increment');
     }
   }
@@ -50,7 +53,7 @@ const store = new Vuex.Store({
 
 const Counter = {
 
-  template:`<div class="asd">{{counts}}</div>`,
+  template: `<div class="asd">{{counts}}</div>`,
   computed: mapState({
     counts: state => state.count
   })
@@ -59,60 +62,13 @@ const Counter = {
 
 new Vue({
   store,
-  template:`<div>
+  template: `<div>
     <Counter>asdfasdf</Counter>
   </div>`,
-  components:{Counter}
+  components: {
+    Counter
+  }
 }).$mount('#storeApp');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

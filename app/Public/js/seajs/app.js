@@ -1,11 +1,10 @@
-define(function(require, exports, module) {
+define( function( require, exports, module ) {
 
-  exports.init = function(options) {
-      
-      const es6 = require('../es6');
-      console.log(es6);
+	exports.init = function( options ) {
 
-  }
+		const es6 = require( '../es6' );
+		console.log( es6 );
 
-});
+	}
 
+} );

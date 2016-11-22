@@ -1,17 +1,18 @@
 import gulp from 'gulp';
 import config from './config';
-const $ =  config.gulpLoadPlugins();
+const $ = config.gulpLoadPlugins();
 
 var pkg = require('../package.json')
 
 // JS\CSS注释
 const banner = ['/**',
-' * <%= pkg.name %> - <%= pkg.description %>',
-// ' * @version v<%= pkg.version %>',
-// ' * @link <%= pkg.homepage %>',
-// ' * @license <%= pkg.license %>',
-' *\/',
-''].join(' ');
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  // ' * @version v<%= pkg.version %>',
+  // ' * @link <%= pkg.homepage %>',
+  // ' * @license <%= pkg.license %>',
+  ' *\/',
+  ''
+].join(' ');
 
 gulp.task('sass', () => {
   const timer = +(new Date());
@@ -22,23 +23,23 @@ gulp.task('sass', () => {
     //语法报错时，整个运行流程还会继续走下去，不退出
     .pipe($.plumber())
     .pipe($.sass())
-    .pipe($.replace(/(\.(jpg|png|gif)+)/g,"$1?v="+timer)) 
+    .pipe($.replace(/(\.(jpg|png|gif)+)/g, "$1?v=" + timer))
     .pipe($.csslint())
     .pipe($.autoprefixer({
       browsers: ['> 5%', 'last 4 versions']
     }))
     // 压缩重复 
-    .pipe($.cleanCss({debug: false}, function(details) {
+    .pipe($.cleanCss({
+      debug: false
+    }, function(details) {
       //压缩前大小
       //console.log(details.name + ' originalSize: ' + details.stats.originalSize);
       //压缩后大小
       //console.log(details.name + ' minifiedSize: ' + details.stats.minifiedSize);
     }))
     .pipe(gulp.dest('../Public/css/'))
-    .pipe(gulp.dest('dist/Public/css/'))
-    ;
+    .pipe(gulp.dest('dist/Public/css/'));
 });
-
 
 gulp.task('sass:dev', () => {
   const timer = +(new Date());
@@ -50,6 +51,16 @@ gulp.task('sass:dev', () => {
       browsers: ['> 5%', 'last 4 versions']
     }))
     .pipe(gulp.dest('dist/Public/css/'))
-    .pipe(gulp.dest('../Public/css/'))
-    ;
+    .pipe(gulp.dest('../Public/css/'));
+});
+
+var converter = require('sass-convert');
+
+gulp.task('sass:convert', () => {
+  gulp.src('app/**/*.css')
+    .pipe(converter({
+      from: 'sass',
+      to: 'scss'
+    }))
+    .pipe(gulp.dest('output'));
 });
