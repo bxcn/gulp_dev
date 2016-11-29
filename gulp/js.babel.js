@@ -29,7 +29,9 @@ gulp.task('js',() => {
     .pipe($.cached("js"))
     .pipe($.plumber())
     .pipe($.if(notHasLib,$.eslint()))
-    //.pipe($.if(notHasLib,$.babel()))
+    .pipe($.if(notHasLib,$.babel({
+       presets: ['react','es2015']
+    })))
     //.pipe($.header(banner, {pkg: pkg}))
     .pipe($.uglify({
       //preserveComments:'license',

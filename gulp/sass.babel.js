@@ -53,14 +53,4 @@ gulp.task('sass:dev', () => {
     .pipe(gulp.dest('dist/Public/css/'))
     .pipe(gulp.dest('../Public/css/'));
 });
-
-var converter = require('sass-convert');
-
-gulp.task('sass:convert', () => {
-  gulp.src('app/**/*.css')
-    .pipe(converter({
-      from: 'sass',
-      to: 'scss'
-    }))
-    .pipe(gulp.dest('output'));
-});
+ 
