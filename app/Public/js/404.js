@@ -1,8 +1,8 @@
 (function() {
 
-  "use strict";
+      "use strict";
 
-  alert("123");
+      alert("123");
   // 1112
   $("#aa");
 
