@@ -12,7 +12,7 @@
 
   /**
    * @author bxcn
-   * @date 
+   * @date
    */
   function aaa() {
     var c = "123";

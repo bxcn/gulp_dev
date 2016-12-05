@@ -1,11 +1,9 @@
 define(function(require, exports, module) {
-  
+
   module.exports.init = function() {
-    
+
     var ajaxData = require('../lib/ajaxData').init();
-
     $('[data-delete]').click(function(){
-
       var checkeds = $('[data-checkbox-many=\'item\']:checked');
       var array = [];
 
@@ -13,7 +11,7 @@ define(function(require, exports, module) {
         array.push($(this).val());
       });
       if ( !array.length ) {
-        
+
         alertDialog('请先选择要去除的项');
         return;
       }
@@ -36,27 +34,20 @@ define(function(require, exports, module) {
 
       });
 
-    });  
 
-    console.log("Log a debug level message.");
-
-    var obj = {
-      id: 1
-    };
-    /**
-     * [description]
-     *
-     * @return {[type]} [description]
-     */
-    const fn = () => {
-      return true;
-    };
-    // 切换select
-    $('select[data-select]').on('change.bs.other', function(){
-      var that = $(this);
-      console.log(1);
     });
 
+
+    /**
+     * [description]
+     * @return {[type]} [description]
+     */
+
+
+    // 切换select
+    $('select[data-select]').on('change.bs.other', function(){
+    });
     $('.JobInvitation').addClass('active');
   };
 });
+
