@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
-  
-  module.exports.init = function() {
-    
-    var ajaxData = require('../lib/ajaxData').init();
+
+module.exports.init = function() {
+	var aa = "asdf";
+       var ajaxData = require('../lib/ajaxData').init();
 
     $('[data-delete]').click(function(){
 
@@ -13,7 +13,7 @@ define(function(require, exports, module) {
         array.push($(this).val());
       });
       if ( !array.length ) {
-        
+
         alertDialog('请先选择要去除的项');
         return;
       }
@@ -36,7 +36,7 @@ define(function(require, exports, module) {
 
       });
 
-    });  
+    });
 
     console.log("Log a debug level message.");
 

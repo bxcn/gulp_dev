@@ -1,37 +1,37 @@
-const addNote = ({
+const addNote = ( {
   dispatch
-}) => {
-  dispatch('ADD_NOTE');
+} ) => {
+  dispatch( 'ADD_NOTE' );
 };
 
-const editNote = ({
+const editNote = ( {
   dispatch
-}, e) => {
-  dispatch('EDIT_NOTE', e.target.value);
+}, e ) => {
+  dispatch( 'EDIT_NOTE', e.target.value );
 };
 
-const deleteNote = ({
+const deleteNote = ( {
 
   dispatch
 
-}) => {
+} ) => {
 
-  dispatch('DELETE_NOTE');
+  dispatch( 'DELETE_NOTE' );
 
 };
 
-const updateActiveNote = ({
+const updateActiveNote = ( {
   dispatch
-}, note) => {
-  dispatch('SET_ACTIVE_NOTE', note);
+}, note ) => {
+  dispatch( 'SET_ACTIVE_NOTE', note );
 };
 
-const toggleFavorite = ({
+const toggleFavorite = ( {
   dispatch
-}) => {
-  dispatch('TOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITE');
+} ) => {
+  dispatch( 'TOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITETOGGLE_FAVORITE' );
 };
-var array = [1, 2, 3, {
+var array = [ 1, 2, 3, {
   id: 1
 }, {
   id: 1
@@ -39,13 +39,13 @@ var array = [1, 2, 3, {
   id: 1
 }, {
   id: 1
-}];
-var fn = function(dd) {};
+} ];
+var fn = function( dd ) {};
 
-if (true) {}
+if ( true ) {}
 
 var sum = 1 + 1;
-var array = [1, 2, 3, {
+var array = [ 1, 2, 3, {
   id: 1
 }, {
   id: 1
@@ -53,16 +53,16 @@ var array = [1, 2, 3, {
   id: 1
 }, {
   id: 1
-}];
+} ];
 
-function aa(a, b, c, d, e) {
+function aa( a, b, c, d, e ) {
   var a = 1;
   var b = 2;
   var c = 3;
   var d = 4;
   var e = 5;
 
-  var array = [1, 2, 3, {
+  var array = [ 1, 2, 3, {
     id: 1
   }, {
     id: 1
@@ -70,8 +70,8 @@ function aa(a, b, c, d, e) {
     id: 1
   }, {
     id: 1
-  }];
+  } ];
 };
 var arr = 0;
-window.setInterval(function() {}, 100);
-(function() {});
+window.setInterval( function() {}, 100 );
+( function() {} );

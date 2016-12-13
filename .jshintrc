@@ -17,5 +17,6 @@
   "indent":true,
   "latedef":true,
   "newcap":true,
-  "laxcomma":true
-} 
+  "laxcomma":true,
+  "cyclomatic":false
+}

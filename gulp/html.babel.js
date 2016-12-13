@@ -34,5 +34,5 @@ gulp.task('html:dev',() => {
     .pipe($.replace('$1?v=version','$1?v='+version))
     .pipe(gulp.dest('../Application/Home/View/include/'))
     ;
-    
+
 });

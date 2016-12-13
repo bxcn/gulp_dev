@@ -4,10 +4,10 @@
   "warn" or 1 - 开启这个规则校验，但只是提醒，不会退出
   "error" or 2 - 开启这个规则校验，并退出
 
-
+http://www.jianshu.com/p/e826e13c67ec  安装方式
 
 临时关闭eslint校验：
-eslint-disable 
+eslint-disable
 
 
  */
@@ -18,34 +18,34 @@ eslint-disable
 
 //  // rules参数列表：http://eslint.org/docs/rules/
 "ecmaFeatures": {
-  // lambda表达式  
+  // lambda表达式
   "arrowFunctions": true,
-  // 块级作用域，允许使用let const  
+  // 块级作用域，允许使用let const
   "blockBindings": true,
-  // class  
+  // class
   "classes": true,
-  // http://es6.ruanyifeng.com/#docs/function#函数参数的默认值  
+  // http://es6.ruanyifeng.com/#docs/function#函数参数的默认值
   "defaultParams": true,
-  // 解构赋值  
+  // 解构赋值
   "destructuring": true,
-  // http://es6.ruanyifeng.com/#docs/iterator#for---of循环  
+  // http://es6.ruanyifeng.com/#docs/iterator#for---of循环
   "forOf": true,
-  // http://es6.ruanyifeng.com/#docs/generator  
+  // http://es6.ruanyifeng.com/#docs/generator
   "generators": true,
-  // 允许使用模块，模块内默认严格模式  
+  // 允许使用模块，模块内默认严格模式
   "modules": true,
-  // 允许字面量定义对象时，用表达式做属性名  
-  // http://es6.ruanyifeng.com/#docs/object#属性名表达式  
-  // 允许对象字面量方法名简写 
+  // 允许字面量定义对象时，用表达式做属性名
+  // http://es6.ruanyifeng.com/#docs/object#属性名表达式
+  // 允许对象字面量方法名简写
   "objectLiteralShorthandMethods": true,
-  // 对象字面量属性名简写       
+  // 对象字面量属性名简写
   "objectLiteralShorthandProperties": true,
-  // http://es6.ruanyifeng.com/#docs/function#rest参数  
+  // http://es6.ruanyifeng.com/#docs/function#rest参数
   "restParams": true,
-  // http://es6.ruanyifeng.com/#docs/function#扩展运算符  
+  // http://es6.ruanyifeng.com/#docs/function#扩展运算符
   "spread": true,
   "superInFunctions": true,
-  // http://es6.ruanyifeng.com/#docs/string#模板字符串  
+  // http://es6.ruanyifeng.com/#docs/string#模板字符串
   "templateStrings": true,
   "unicodeCodePointEscapes": true,
 }
@@ -53,14 +53,14 @@ eslint-disable
 //规则说明     ESLint v2.4.0
 "rules": {
   /*Possible Errors*/
-  // 数组和对象键值对最后一个逗号， 
-  // never参数：不能带末尾的逗号, 
-  // always参数：必须带末尾的逗号，  
-  // always-multiline：多行模式必须带逗号，单行模式不能带逗号  
+  // 数组和对象键值对最后一个逗号，
+  // never参数：不能带末尾的逗号,
+  // always参数：必须带末尾的逗号，
+  // always-multiline：多行模式必须带逗号，单行模式不能带逗号
   "comma-dangle": [2, "never"],
   //禁止在条件表达式中使用赋值语句
   "no-cond-assign": 2,
-  //禁止使用console 
+  //禁止使用console
   "no-console": 2,
   //禁止在条件中使用常量表达式 if(true) if(1)
   "no-constant-condition": 2,
@@ -70,7 +70,7 @@ eslint-disable
   "no-debugger": 2,
   //函数参数禁止重名
   "no-dupe-args": 2,
-  //在创建对象字面量时不允许键重复 
+  //在创建对象字面量时不允许键重复
   "no-dupe-keys": 2,
   //在switch语句中禁止重复的case
   "no-duplicate-case": 2,
@@ -119,33 +119,33 @@ eslint-disable
   "accessor-pairs": 2,
   //数值方法的回调函数中强制写return语句
   "array-callback-return": 2,
-  //当在代码块中用var声明变量，并在代码块外使用时报错 
+  //当在代码块中用var声明变量，并在代码块外使用时报错
   "block-scoped-var": 0,
   //用来控制函数的复杂度，分支超过5时报错
   "complexity": [2, 5],
-  //不同分支的return语句不能返回不同的类型，要么一致要么都没有  
+  //不同分支的return语句不能返回不同的类型，要么一致要么都没有
   "consistent-return": 0,
-  // if else while for do后面的代码块是否需要{ }包围，参数：  
-  // multi         只有块中有多行语句时才需要{ }包围  
+  // if else while for do后面的代码块是否需要{ }包围，参数：
+  // multi         只有块中有多行语句时才需要{ }包围
   // multi-line    只有块中有多行语句时才需要{ }包围, 但是块中的执行语句只有一行时，块中的语句只能跟和if语句在同一行。
-  //                if (foo) foo++; else doSomething();  
-  // multi-or-nest 只有块中有多行语句时才需要{ }包围, 如果块中的执行语句只有一行，执行语句可以另起一行也可以跟在if语句后面    
-  // [2, "multi", "consistent"] 保持前后语句的{ }一致  
-  // default: [2, "all"] 全都需要{ }包围  
+  //                if (foo) foo++; else doSomething();
+  // multi-or-nest 只有块中有多行语句时才需要{ }包围, 如果块中的执行语句只有一行，执行语句可以另起一行也可以跟在if语句后面
+  // [2, "multi", "consistent"] 保持前后语句的{ }一致
+  // default: [2, "all"] 全都需要{ }包围
   "curly": 2,
   //所有的switch语句都必须要有一个default分支
   "default-case": 2,
   // 在书写对象的属性或方法时，新的一行代码可以以. 开头，也可以以. 结束。
-  // 强制统一object.key中 . 的位置，参数:  
-  //      property，'.'号应与属性在同一行  
-  //      object, '.' 号应与对象名在同一行  
+  // 强制统一object.key中 . 的位置，参数:
+  //      property，'.'号应与属性在同一行
+  //      object, '.' 号应与对象名在同一行
   "dot-location": [2, "property"],
-  // 强制使用.号取属性  
-  // 参数： allowKeywords：true  使用保留字做属性名时，只能使用.方式取属性  
-  //                       false 使用保留字做属性名时, 只能使用[]方式取属性 
-  //                       e.g [2, {"allowKeywords": false}]  
-  //        allowPattern:  当属性名匹配提供的正则表达式时，允许使用[]方式取值,否则只能用.号取值 
-  //                       e.g [2, {"allowPattern": "^[a-z]+(_[a-z]+)+$"}]  
+  // 强制使用.号取属性
+  // 参数： allowKeywords：true  使用保留字做属性名时，只能使用.方式取属性
+  //                       false 使用保留字做属性名时, 只能使用[]方式取属性
+  //                       e.g [2, {"allowKeywords": false}]
+  //        allowPattern:  当属性名匹配提供的正则表达式时，允许使用[]方式取值,否则只能用.号取值
+  //                       e.g [2, {"allowPattern": "^[a-z]+(_[a-z]+)+$"}]
   "dot-notation": [2, {
     "allowKeywords": true
   }],
@@ -181,7 +181,7 @@ eslint-disable
   "no-extra-label": 2,
   //在case语句中尽量加break，避免不必要的fallthrough错误，消除从一个case到另一个case的非故意的「fall through」。
   "no-fallthrough": 2,
-  //在使用浮点小数时，不能够省略小数点前面的数或者后面的数，必须写。比如.2 2. 应该写2.2 2.0 
+  //在使用浮点小数时，不能够省略小数点前面的数或者后面的数，必须写。比如.2 2. 应该写2.2 2.0
   "no-floating-decimal": 2,
   //禁止隐式转换，为了消除简写的类型转换
   "no-implicit-coercion": 2,
@@ -326,19 +326,19 @@ eslint-disable
 
   /*Stylistic Issues*/
 
-  // 用数组字面量定义数组时数组元素前后是否加空格， 
+  // 用数组字面量定义数组时数组元素前后是否加空格，
   // never参数： 数组元素前后不能带空格，
-  // always参数：数组元素前后必须留空格  
+  // always参数：数组元素前后必须留空格
   "array-bracket-spacing": [2, "never"],
   //在单行代码块中，代码块前后是否需要留空格
   // always参数：默认，前后必须留空格
-  // never参数： 前后不能带空格  
+  // never参数： 前后不能带空格
   "block-spacing": [2, "always"],
   //大括号的样式，比如下面的大括号语法采用『1tbs』,允许单行样式
   "brace-style": [2, "1tbs", {
     "allowSingleLine": true
   }],
-  //强制使用驼峰命名  
+  //强制使用驼峰命名
   "camelcase": 2,
   //规定了逗号前后的空白，默认配置规定逗号前面没有空白，而逗号后面需要留空白
   "comma-spacing": [2, {
@@ -351,7 +351,7 @@ eslint-disable
   "computed-property-spacing": [2, "never"],
   //统一this的别名（this赋值的变量名）保证整个应用程序代码的统一。
   //如果一个变量被指定为this对象的别名，那么这个变量就不能够用来赋其他值，只能够用来保存this对象。
-  //如果this对象明确被赋值给了一个变量，那么这个变量应该是配置中指定的那个变量名。     
+  //如果this对象明确被赋值给了一个变量，那么这个变量应该是配置中指定的那个变量名。
   "consistent-this": [2, "self"],
   //该规则规定文件最后强制换行，仅需留一空行
   "eol-last": 2,
@@ -360,10 +360,10 @@ eslint-disable
   //在JavaScript中有两种方式定义函数:函数声明和函数表达式。
   //函数声明就是把function关键词写在最前面，后面跟一个函数名。我们可以在函数申明代码前调用函数
   //函数表达式是通过var等声明变量的关键字开头，然后跟函数名，再后面是function本身。在使用函数表达式定义函数前调用函数会报错
-  // 统一定义函数是所采用的方式，参数：  
-  //    declaration: 强制使用方法声明的方式，function f(){} e.g [2, "declaration"]  
-  //    expression：强制使用方法表达式的方式，默认方式，var f = function() {}  e.g [2, "expression"]  
-  //    allowArrowFunctions: declaration风格中允许箭头函数。 e.g [2, "declaration", {"allowArrowFunctions":true}]  
+  // 统一定义函数是所采用的方式，参数：
+  //    declaration: 强制使用方法声明的方式，function f(){} e.g [2, "declaration"]
+  //    expression：强制使用方法表达式的方式，默认方式，var f = function() {}  e.g [2, "expression"]
+  //    allowArrowFunctions: declaration风格中允许箭头函数。 e.g [2, "declaration", {"allowArrowFunctions":true}]
   "func-style": [2, "expression"],
   //规定了标识符命名的黑名单
   "id-blacklist": [2, "data", "err", "e", "cb", "callback"],
@@ -482,7 +482,7 @@ eslint-disable
 
   //JavaScript不要求在每行末尾加上分号，这是因为JavaScript引擎会决定是否需要在行末加上分号，然后自动帮我们在行末加上分号，这一特性被成为ASI(automatic semicolon insertion)，也是JavaScript语言最富争议的特性之一
   //尽管ASI允许我们使用更加自由的代码风格，但是它也可能使得你的代码并不是按你期许的方式运行
-  //两个可选参数，always 和never 
+  //两个可选参数，always 和never
   //默认配置always，要求在行末加上分号。
   "semi": [2, "always"],
   //该规则用来规定分号前后是否加空格，默认配置如下

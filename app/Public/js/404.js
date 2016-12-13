@@ -3,7 +3,7 @@
       "use strict";
 
       alert("123");
-  // 1112
+
   $("#aa");
 
   var c = 1;
@@ -12,7 +12,7 @@
 
   /**
    * @author bxcn
-   * @date 
+   * @date
    */
   function aaa() {
     var c = "123";
@@ -20,7 +20,7 @@
   if (true) {
     return;
   }
-  var abcAddDdd = ";;";;
+  var abcAddDdd = ";;";
 
 
 })();

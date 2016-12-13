@@ -1,7 +1,7 @@
 exports.types = {
   "css": "text/css",
   "gif": "image/gif",
-  "html": "text/html",
+	"html": "text/html",
   "ico": "image/x-icon",
   "jpeg": "image/jpeg",
   "jpg": "image/jpeg",
