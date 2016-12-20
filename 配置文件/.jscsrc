@@ -1,0 +1,9 @@
+{
+  "preset": "jquery",
+  "excludeFiles": ["node_modules/**"],
+  "fileExtensions": [".js"],
+  "safeContextKeyword": ["that"],
+  "validateIndentation": 2,
+  "validateJSDoc": {"checkParamNames": true, "checkRedundantParams": false, "requireParamTypes": true},
+  "validateQuoteMarks": "'",
+}

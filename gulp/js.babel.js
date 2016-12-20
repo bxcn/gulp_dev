@@ -46,8 +46,21 @@ gulp.task( 'js:dev', () => {
       presets: [ 'es2015', 'react' ]
     } ) ) )
     .pipe( $.if( notHasLib, $.umd( {
-      template: path.join( __dirname, '../umd/seajs.js' )
+      template: path.join( __dirname, '../umd/cmd.js' )
     } ) ) )
     .pipe( gulp.dest( 'dist/Public/js/' ) )
     .pipe( gulp.dest( '../Public/js/' ) );
 } );
+
+gulp.task( 'webpackJsLib', () => {
+  return gulp.src( [ 'app/Public/js/lib/**/*.js' ] )
+    .pipe( gulp.dest( 'build/Public/js/lib/' ) )
+    .pipe( gulp.dest( 'dist/Public/js/lib/' ) );
+} );
+gulp.task( 'webpackJs', [ 'webpackJsLib' ], () => {
+  return gulp.src( [ 'app/Public/js/**/*.js' ] )
+    .pipe( $.webpack( require( '../webpack.config.js' ) ) )
+    .pipe( gulp.dest( 'build/Public/js/' ) )
+    .pipe( gulp.dest( 'dist/Public/js/' ) );
+} );
+
